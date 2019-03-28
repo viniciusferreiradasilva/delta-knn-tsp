@@ -103,10 +103,13 @@ for i in range(0, (len(series) - window_size), step_size):
         # Cria um modelo de regressão linear.    
         modelLR = linear_model.LinearRegression()
         modelLR.fit(trainLR, testLR)
-        # Prediz os step_size passos na série temporal.
-        prediction = modelLR.predict(seriesLR_train[i + window_size-1:i + window_size].values)
-        # Armazena o valor predito.
-        predictedLR[i + window_size] = prediction
+        
+        for k in range(i, i+step_size):
+        
+            # Prediz os step_size passos na série temporal.
+            prediction = modelLR.predict(seriesLR_train[k:k+1].values)
+            # Armazena o valor predito.
+            predictedLR[k] = prediction
 
 #print(predicted, predictedLR)
 
@@ -146,7 +149,7 @@ if 'a' in args.model or 'A' in args.model:
 if 'l' in args.model or 'L' in args.model: 
     errorsLR = list(map(lambda x, y: (x - y) * (x - y), y, predictedLR))
 
-    plt.plot(range(len(errorLR)), errorsLR, label='erro LR')
+    plt.plot(range(len(errorsLR)), errorsLR, label='erro LR')
     
     texttitle += 'LR = ' + str(errorLR) + ' '
 #plt.title("Erros de AR para " + (args.input.split('/')[1].split('.')[0]) +
@@ -174,4 +177,4 @@ plt.show()
 # plt.show()
 
 
-#python main.py --input 'input/NVDA.csv' --from_index 0 --to_index 200 --window 10 --step 5
+#python main.py --input 'input/NVDA.csv' --from_index 0 --to_index 200 --window 10 --step 5 --model l
