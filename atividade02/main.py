@@ -3,6 +3,7 @@
 from statsmodels.tsa.ar_model import AR
 from statsmodels.tsa.stattools import acf
 
+from sklearn import linear_model
 
 from statsmodels.tsa.seasonal import seasonal_decompose
 from sklearn.metrics import mean_squared_error
@@ -41,6 +42,10 @@ parser.add_argument('--window', type=int, default=20,
 parser.add_argument('--steps', type=int, default=5,
                     help='um valor inteiro que representa o número de passos futuros que serão previstos.')
 
+# Argumento para o arquivo de entrada.
+parser.add_argument('--model', type=str, default=5,
+                    help='uma string que representa quais modelos serão avaliados, A para AR e L para LR.')
+
 args = parser.parse_args()
 
 # Carrega o arquivo .csv em um dataframe do pandas.
@@ -62,40 +67,94 @@ step_size = args.steps
 # Recupera a série do dataframe de acordo com o nome fornecido como argumento.
 series = df[from_index:to_index][field]
 
+all_fields = ['open','volume', 'high', 'low', 'close']
+
+fields_LR_train = all_fields.copy()
+
+fields_LR_train.remove(str(field))
+
+print(fields_LR_train)
+
+seriesLR_train = df[from_index:to_index][fields_LR_train]
+seriesLR_test = df[from_index:to_index][str(field)]
+
 # Arrays que armazenam os valores reais e preditos.
 y = [None] * (len(series) - window_size)
 predicted = [None] * (len(series) - window_size)
+predictedLR = [None] * 1300#[None] * (len(series) - window_size)
 
 for i in range(0, (len(series) - window_size), step_size):
     # Recupera uma fatia da série temporal de acordo com o tamanho da janela.
     train_series = series[i:(i + window_size)].values
-    # Cria um modelo de autoregressão.
-    model = AR(train_series).fit()
-    # Prediz os step_size passos na série temporal.
-    prediction = model.predict(start=len(train_series), end=(len(train_series) + step_size - 1), dynamic=False)
-    # Armazena o valor predito.
-    predicted[i:(i + step_size)] = prediction
+    
+    if 'a' in args.model or 'A' in args.model:
+        # Cria um modelo de autoregressão.    
+        model = AR(train_series).fit()
+        # Prediz os step_size passos na série temporal.
+        prediction = model.predict(start=len(train_series), end=(len(train_series) + step_size - 1), dynamic=False)
+        # Armazena o valor predito.
+        predicted[i:(i + step_size)] = prediction
+        
+    if 'l' in args.model or 'L' in args.model: 
+                
+        trainLR = seriesLR_train[i:(i + window_size)].values
+        testLR = seriesLR_test[i:(i + window_size)].values
+        
+        # Cria um modelo de regressão linear.    
+        modelLR = linear_model.LinearRegression()
+        modelLR.fit(trainLR, testLR)
+        # Prediz os step_size passos na série temporal.
+        prediction = modelLR.predict(seriesLR_train[i + window_size-1:i + window_size].values)
+        # Armazena o valor predito.
+        predictedLR[i + window_size] = prediction
+
+#print(predicted, predictedLR)
 
 y = series[window_size:]
-predicted = predicted[:len(y)]
-# Calcula o erro quadrático médio.
-error = mean_squared_error(y.values, predicted)
-# Plota o gráfico diferenciando os valores reais e os valores preditos.
-plt.subplot(2, 1, 1)
-plt.plot(range(len(predicted)), predicted, label='predicted')
+if 'a' in args.model or 'A' in args.model:
+    predicted = predicted[:len(y)]
+    # Calcula o erro quadrático médio.
+    errorAR = mean_squared_error(y.values, predicted)
+    # Plota o gráfico diferenciando os valores reais e os valores preditos.
+    plt.subplot(2, 1, 1)
+    plt.plot(range(len(predicted)), predicted, label='predicted AR')
+if 'l' in args.model or 'L' in args.model: 
+    predictedLR = predictedLR[:len(y)]
+    # Calcula o erro quadrático médio.
+    errorLR = mean_squared_error(y.values, predictedLR)
+    # Plota o gráfico diferenciando os valores reais e os valores preditos.
+    plt.subplot(2, 1, 1)
+    plt.plot(range(len(predictedLR)), predictedLR, label='predicted LR')
+    
 plt.plot(range(len(y)), y, label='y')
 plt.legend()
-plt.title("Resultados de AutoRregressão para " + (args.input.split('/')[1].split('.')[0]))
+plt.title("Resultados de Regressão para " + (args.input.split('/')[1].split('.')[0]))
 plt.xlabel("day")
 plt.ylabel("open")
 
+texttitle = 'Erros para ' + (args.input.split('/')[1].split('.')[0]) + ': '
+
 # Plota o gráfico do erro quadratico para cada ponto.
-errors = list(map(lambda x, y: (x - y) * (x - y), y, predicted))
 plt.subplot(2, 1, 2)
-plt.plot(range(len(errors)), errors, label='erro')
+if 'a' in args.model or 'A' in args.model:
+    errorsAR = list(map(lambda x, y: (x - y) * (x - y), y, predicted))
+
+    plt.plot(range(len(errorsAR)), errorsAR, label='erro AR')
+    texttitle += 'AR = ' + str(errorAR) + ' '
+
+    
+if 'l' in args.model or 'L' in args.model: 
+    errorsLR = list(map(lambda x, y: (x - y) * (x - y), y, predictedLR))
+
+    plt.plot(range(len(errorLR)), errorsLR, label='erro LR')
+    
+    texttitle += 'LR = ' + str(errorLR) + ' '
+#plt.title("Erros de AR para " + (args.input.split('/')[1].split('.')[0]) +
+#          " (erro quadrático médio: " + str(errorAR) + ")")
+
+plt.title(texttitle)    
+    
 plt.legend()
-plt.title("Erros de AR para " + (args.input.split('/')[1].split('.')[0]) +
-          " (erro quadrático médio: " + str(error) + ")")
 plt.xlabel("day")
 plt.ylabel("erro")
 
@@ -113,3 +172,6 @@ plt.show()
 # print(result.observed)
 # result.plot()
 # plt.show()
+
+
+#python main.py --input 'input/NVDA.csv' --from_index 0 --to_index 200 --window 10 --step 5
