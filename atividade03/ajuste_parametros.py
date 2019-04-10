@@ -99,9 +99,9 @@ for step in list(map(int, args.steps)):
 
 plt.legend()
 plt.title("Erro quadrático médio por janela")
-plt.xlabel("janela")
-plt.ylabel("erro")
-plt.ylim(0, 100)
+plt.xlabel("Tamanho da Janela")
+plt.ylabel("Valor de MSE")
+plt.ylim(0, np.mean(series))
 # plt.xlim(args.from_window, 100)
 plt.savefig('output/' + args.stock_name+'.eps', format='eps')
 # plt.show()

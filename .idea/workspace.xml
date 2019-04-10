@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d18f1f0-ce91-4f64-83b0-81b68443fd20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/atividade03/experimentos_erros.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/experimentos_erros.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/NVDA_main.eps" beforeDir="false" afterPath="$PROJECT_DIR$/output/NVDA_main.eps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atividade03/experimentos_erros.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/predicao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atividade03/experimentos_janela.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/ajuste_parametros.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/AMZN_cmp.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/AMZN_main.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/NVDA_cmp.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/NVDA_main.eps" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,10 +19,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/atividade03/experimentos_erros.py">
+        <entry file="file://$PROJECT_DIR$/atividade03/predicao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="66" column="25" lean-forward="true" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
+            <state relative-caret-position="780">
+              <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
               <folding>
                 <element signature="e#87#126#0" expanded="true" />
               </folding>
@@ -26,10 +31,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/atividade03/experimentos_janela.py">
+        <entry file="file://$PROJECT_DIR$/atividade03/ajuste_parametros.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
+            <state relative-caret-position="341">
+              <caret line="74" column="48" lean-forward="true" selection-start-line="74" selection-start-column="48" selection-end-line="74" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -65,6 +70,8 @@
         <option value="$PROJECT_DIR$/atividade02/test.py" />
         <option value="$PROJECT_DIR$/atividade03/experimentos_janela.py" />
         <option value="$PROJECT_DIR$/atividade03/experimentos_erros.py" />
+        <option value="$PROJECT_DIR$/atividade03/predicao.py" />
+        <option value="$PROJECT_DIR$/atividade03/ajuste_parametros.py" />
       </list>
     </option>
   </component>
@@ -79,6 +86,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -110,7 +118,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -201,7 +208,7 @@
     <frame x="49" y="25" width="1871" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1649315" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16657534" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -214,14 +221,14 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3299539" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.27327824" side_tool="true" weight="0.23568702" />
       <window_info anchor="bottom" auto_hide="true" id="Python Console" order="9" weight="0.36128363" />
-      <window_info anchor="bottom" id="Terminal" internal_type="SLIDING" order="10" sideWeight="0.72672176" type="SLIDING" weight="0.2826087" />
-      <window_info anchor="right" id="Google Cloud Storage" />
-      <window_info anchor="right" id="JSON Viewer" />
+      <window_info anchor="bottom" id="Terminal" internal_type="SLIDING" order="10" sideWeight="0.72672176" type="SLIDING" weight="0.35817805" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
+      <window_info anchor="right" id="Google Cloud Storage" order="5" />
+      <window_info anchor="right" id="JSON Viewer" order="6" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -271,20 +278,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/atividade03/experimentos_erros.py">
+    <entry file="file://$PROJECT_DIR$/atividade03/ajuste_parametros.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="66" column="25" lean-forward="true" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
-          <folding>
-            <element signature="e#87#126#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="341">
+          <caret line="74" column="48" lean-forward="true" selection-start-line="74" selection-start-column="48" selection-end-line="74" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/atividade03/experimentos_janela.py">
+    <entry file="file://$PROJECT_DIR$/atividade03/predicao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
+        <state relative-caret-position="780">
+          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+          <folding>
+            <element signature="e#87#126#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

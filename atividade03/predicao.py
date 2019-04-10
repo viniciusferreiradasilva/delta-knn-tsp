@@ -44,6 +44,11 @@ parser.add_argument('--steps', type=int, default=5,
 parser.add_argument('--alg', type=int, default=0,
                     help='Um valor inteiro que representa qual algoritmo deve ser usado. 0 - AR\n1 - ARIMA\n2 - SARIMA.')
 
+
+parser.add_argument('--args', required=False, nargs='+', default=None,
+                    help='Lista de parâmetros para o algoritmo de regressão. Cada algoritmo necessita de parâmetros'
+                         'diferentes para a sua execução: --args arg_1 arg_2 ... arg_n')
+
 args = parser.parse_args()
 
 # Carrega o arquivo .csv em um dataframe do pandas.
@@ -81,15 +86,18 @@ predicted = [None] * (len(series) - window_size)
 # Recupera o algoritmo que vai ser utilizado na regressão.
 algorithm = [AR, ARIMA][args.alg]
 
+# Recupera os parâmetros do algoritmo de regressão.
+if(args.args):
+    algorithm_args = tuple(map(int, args.args))
+else:
+    algorithm_args = None
 
 for i in range(0, (len(series) - window_size), step_size):
     # Recupera uma fatia da série temporal de acordo com o tamanho da janela.
     train_series = series[i:(i + window_size)].values
 
-    # Cria um modelo de autoregressão.
-    # model = algorithm(train_series)
-    # model = algorithm(train_series, order=(1, 0, 0))
-    model = ARIMA(train_series, order=(1, 0, 0))
+    model = algorithm(train_series, algorithm_args)
+
     # Ajusta o modelo de acordo com a faixa da série.
     model = model.fit(disp=0)
 
