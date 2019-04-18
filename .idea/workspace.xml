@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9d18f1f0-ce91-4f64-83b0-81b68443fd20" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade03/experimentos_erros.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/predicao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade03/experimentos_janela.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/ajuste_parametros.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/AMZN_cmp.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/AMZN_main.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/NVDA_cmp.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/NVDA_main.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atividade03/ajuste_parametros.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/ajuste_parametros.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atividade03/decomposicao.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/decomposicao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atividade03/predicao.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/predicao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/AES_windows.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/CHK_windows.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/NVDA_windows.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/PCLN_windows.eps" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,20 +22,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/atividade03/predicao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+            <state relative-caret-position="440">
+              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
               <folding>
                 <element signature="e#87#126#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/atividade03/ajuste_parametros.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="74" column="48" lean-forward="true" selection-start-line="74" selection-start-column="48" selection-end-line="74" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -70,8 +62,10 @@
         <option value="$PROJECT_DIR$/atividade02/test.py" />
         <option value="$PROJECT_DIR$/atividade03/experimentos_janela.py" />
         <option value="$PROJECT_DIR$/atividade03/experimentos_erros.py" />
-        <option value="$PROJECT_DIR$/atividade03/predicao.py" />
+        <option value="$PROJECT_DIR$/atividade03/modelos.py" />
+        <option value="$PROJECT_DIR$/atividade03/decomposicao.py" />
         <option value="$PROJECT_DIR$/atividade03/ajuste_parametros.py" />
+        <option value="$PROJECT_DIR$/atividade03/predicao.py" />
       </list>
     </option>
   </component>
@@ -108,11 +102,6 @@
               <item name="aaam" type="b2602c69:ProjectViewProjectNode" />
               <item name="aaam" type="462c0819:PsiDirectoryNode" />
               <item name="input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aaam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aaam" type="462c0819:PsiDirectoryNode" />
-              <item name="output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -205,10 +194,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="25" width="1871" height="1055" extended-state="6" />
+    <frame x="59" y="25" width="1861" height="1175" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16657534" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16822946" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -220,15 +209,13 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3299539" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.27327824" side_tool="true" weight="0.23568702" />
-      <window_info anchor="bottom" auto_hide="true" id="Python Console" order="9" weight="0.36128363" />
-      <window_info anchor="bottom" id="Terminal" internal_type="SLIDING" order="10" sideWeight="0.72672176" type="SLIDING" weight="0.35817805" />
+      <window_info anchor="bottom" auto_hide="true" id="Python Console" order="9" weight="0.36221197" />
+      <window_info active="true" anchor="bottom" id="Terminal" internal_type="SLIDING" order="10" sideWeight="0.72672176" visible="true" weight="0.34285715" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="right" id="R Packages" order="4" />
-      <window_info anchor="right" id="Google Cloud Storage" order="5" />
-      <window_info anchor="right" id="JSON Viewer" order="6" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -255,9 +242,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/atividade03/decomposicao.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/atividade02/decomposicao.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -278,17 +262,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/atividade03/experimentos_janela.py" />
+    <entry file="file://$PROJECT_DIR$/atividade03/experimentos_erros.py" />
+    <entry file="file://$PROJECT_DIR$/atividade03/modelos.py" />
+    <entry file="file://$PROJECT_DIR$/decompose.eps" />
+    <entry file="file://$PROJECT_DIR$/atividade03/decomposicao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/atividade03/ajuste_parametros.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="74" column="48" lean-forward="true" selection-start-line="74" selection-start-column="48" selection-end-line="74" selection-end-column="48" />
+        <state relative-caret-position="553">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/atividade03/predicao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+        <state relative-caret-position="440">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="e#87#126#0" expanded="true" />
           </folding>

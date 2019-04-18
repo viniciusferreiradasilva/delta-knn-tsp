@@ -8,40 +8,24 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
+stock = 'NVDA'
 series = pd.read_csv('input/all_stocks_5yr.csv', header=0).dropna()
 # series = series.loc[series['Name'] == 'NVDA']['open'][1:100]
-series = series.loc[series['Name'] == 'NVDA']['open'][1:200]
+series = series.loc[series['Name'] == stock]['open'][1:500]
 series.index = pd.DatetimeIndex(freq='B', start=0, periods=len(series - 1))
 result = seasonal_decompose(series, model='multiplicative')
-plt.figure(figsize=(12,6))
+plt.figure(figsize=(12, 6))
 plt.subplots_adjust(hspace=.3, wspace=0.3)
-plt.subplot(3, 2, 1)
-plt.plot(range(len(result.trend)), result.trend, label='trend')
-plt.plot(range(len(result.trend)), series, label='open')
+plt.subplot(3, 1, 1)
+plt.plot(range(len(result.trend)), series, label='open', color='gray', linewidth=2)
+plt.plot(range(len(result.trend)), result.trend, label='Trend')
 plt.legend()
-plt.title("Decomposição NVDA")
-plt.subplot(3, 2, 3)
-plt.plot(range(len(result.seasonal)), result.seasonal, label='sazonalidade')
+plt.title("Decomposição " + stock)
+plt.subplot(3, 1, 2)
+plt.plot(range(len(result.seasonal)), result.seasonal, label='Sazonalidade')
 plt.legend()
-plt.subplot(3, 2, 5)
-plt.plot(range(len(result.resid)), result.resid, label='resíduo')
-plt.legend()
-
-plt.subplot(4, 2, 2)
-series = pd.read_csv('input/all_stocks_5yr.csv', header=0).dropna()
-series = series.loc[series['Name'] == 'CHK']['open'][1:200]
-series.index = pd.DatetimeIndex(freq='B', start=0, periods=len(series - 1))
-result = seasonal_decompose(series, model='multiplicative')
-plt.subplot(3, 2, 2)
-plt.plot(range(len(result.trend)), result.trend, label='trend')
-plt.plot(range(len(result.trend)), series, label='open')
-plt.title("Decomposição CHK")
-plt.legend()
-plt.subplot(3, 2, 4)
-plt.plot(range(len(result.seasonal)), result.seasonal, label='sazonalidade')
-plt.legend()
-plt.subplot(3, 2, 6)
-plt.plot(range(len(result.resid)), result.resid, label='resíduo')
+plt.subplot(3, 1, 3)
+plt.plot(range(len(result.resid)), result.resid, label='Resíduo')
 plt.legend()
 
-plt.savefig('decompose.eps', format='eps')
+plt.savefig('output/' + stock + '_decompose.eps', format='eps')
