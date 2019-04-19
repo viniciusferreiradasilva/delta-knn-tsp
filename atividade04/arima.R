@@ -1,9 +1,11 @@
 library('ggplot2')
 library('forecast')
 library('tseries')
+source('metrics.R')
+source('datahandle.R')
 
 # Carrega o csv de todas as ações.
-sp500 <- read.csv('all_stocks_5yr.csv', header=TRUE, stringsAsFactors=FALSE)
+sp500 <- read.csv('../input/all_stocks_5yr.csv', header=TRUE, stringsAsFactors=FALSE)
 
 # Recupera apenas as ações da NVDA.
 nvda <- subset(sp500, Name=="NVDA")
