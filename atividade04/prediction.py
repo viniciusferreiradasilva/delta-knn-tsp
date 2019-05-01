@@ -63,10 +63,6 @@ window_size = args.window
 step_size = args.steps
 # Retrieves the time series of the field.
 series = df[from_index:to_index][field]
-
-# pre-processing time series.
-series = series.apply(math.log)
-
 # Series values.
 y = [None] * (len(series) - window_size)
 # Predicted series values.
@@ -91,7 +87,6 @@ for i in range(0, (len(series) - window_size), step_size):
 y = series[window_size:].values
 predicted = predicted[:len(y)]
 
-# Plota o gráfico diferenciando os valores reais e os valores preditos.
 plt.subplot(2, 1, 1)
 plt.plot(range(len(predicted)), predicted, label='predito')
 plt.plot(range(len(y)), y, label='y')
