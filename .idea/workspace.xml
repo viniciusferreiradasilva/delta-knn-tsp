@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d18f1f0-ce91-4f64-83b0-81b68443fd20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/atividade04/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atividade04/ajuste_parametros.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atividade04/analysis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atividade04/execution.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atividade04/measures.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atividade04/models/AutoRegression.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atividade04/models/KNeighborsRegressor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atividade04/models/MovingAverage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atividade04/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/atividade04/predicao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade03/predicao.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/predicao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade04/arima.R" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade04/datahandle.R" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade04/metrics.R" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/NVDA_cmp.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/NVDA_main.eps" beforeDir="false" />
-    </list>
+    <list default="true" id="9d18f1f0-ce91-4f64-83b0-81b68443fd20" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +274,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1173" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1741453" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
