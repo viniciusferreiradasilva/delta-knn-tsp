@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d18f1f0-ce91-4f64-83b0-81b68443fd20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/atividade04/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade04/ajuste_parametros.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade04/analysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade04/execution.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade04/measures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade04/models/AutoRegression.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade04/models/KNeighborsRegressor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade04/models/MovingAverage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade04/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade04/predicao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade03/ajuste_parametros.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/ajuste_parametros.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade03/decomposicao.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/decomposicao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/atividade03/predicao.py" beforeDir="false" afterPath="$PROJECT_DIR$/atividade03/predicao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/AES_windows.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/CHK_windows.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/NVDA_windows.eps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/PCLN_windows.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atividade04/arima.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atividade04/datahandle.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/atividade04/metrics.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/NVDA_cmp.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/NVDA_main.eps" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,12 +29,66 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/atividade03/predicao.py">
+        <entry file="file://$PROJECT_DIR$/atividade04/analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="160">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="e#87#126#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atividade03/ajuste_parametros.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="102" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atividade04/predicao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="113" column="17" lean-forward="true" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
+              <folding>
+                <element signature="e#87#135#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atividade04/ajuste_parametros.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" selection-end-column="75" />
+              <folding>
+                <element signature="e#88#103#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atividade04/execution.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="120" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="137" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atividade04/models/KNeighborsRegressor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,6 +129,17 @@
         <option value="$PROJECT_DIR$/atividade03/decomposicao.py" />
         <option value="$PROJECT_DIR$/atividade03/ajuste_parametros.py" />
         <option value="$PROJECT_DIR$/atividade03/predicao.py" />
+        <option value="$PROJECT_DIR$/atividade04/__init__.py" />
+        <option value="$PROJECT_DIR$/atividade04/models.py" />
+        <option value="$PROJECT_DIR$/atividade04/models/AutoRegression.py" />
+        <option value="$PROJECT_DIR$/atividade04/models/KNN.py" />
+        <option value="$PROJECT_DIR$/atividade04/models/MovingAverage.py" />
+        <option value="$PROJECT_DIR$/atividade04/measures.py" />
+        <option value="$PROJECT_DIR$/atividade04/execution.sh" />
+        <option value="$PROJECT_DIR$/atividade04/models/KNeighborsRegressor.py" />
+        <option value="$PROJECT_DIR$/atividade04/ajuste_parametros.py" />
+        <option value="$PROJECT_DIR$/atividade04/predicao.py" />
+        <option value="$PROJECT_DIR$/atividade04/analysis.py" />
       </list>
     </option>
   </component>
@@ -91,17 +165,28 @@
             <path>
               <item name="aaam" type="b2602c69:ProjectViewProjectNode" />
               <item name="aaam" type="462c0819:PsiDirectoryNode" />
-              <item name="atividade02" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aaam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aaam" type="462c0819:PsiDirectoryNode" />
               <item name="atividade03" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="aaam" type="b2602c69:ProjectViewProjectNode" />
               <item name="aaam" type="462c0819:PsiDirectoryNode" />
+              <item name="atividade04" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aaam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aaam" type="462c0819:PsiDirectoryNode" />
+              <item name="atividade04" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aaam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aaam" type="462c0819:PsiDirectoryNode" />
               <item name="input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aaam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aaam" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -114,6 +199,10 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/atividade04/models" />
+      <recent name="$PROJECT_DIR$/atividade04" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/output" />
     </key>
@@ -130,7 +219,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="R.arima">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="aaam" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -173,8 +262,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="arima" type="RRunConfigurationType" factoryName="R" temporary="true">
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/atividade04/arima.R" />
+      <option name="SCRIPT_ARGS" value="" />
+      <option name="WORKING_DIRECTORY_PATH" value="$PROJECT_DIR$/atividade04" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="R.arima" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
       </list>
@@ -194,23 +291,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="25" width="1861" height="1175" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1173" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16822946" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1741453" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299539" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32903227" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32871652" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3299539" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.27327824" side_tool="true" weight="0.23568702" />
-      <window_info anchor="bottom" auto_hide="true" id="Python Console" order="9" weight="0.36221197" />
-      <window_info active="true" anchor="bottom" id="Terminal" internal_type="SLIDING" order="10" sideWeight="0.72672176" visible="true" weight="0.34285715" />
+      <window_info anchor="bottom" auto_hide="true" id="Python Console" order="9" weight="0.36195752" />
+      <window_info active="true" anchor="bottom" id="Terminal" internal_type="SLIDING" order="10" sideWeight="0.72672176" visible="true" weight="0.34256694" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -273,19 +370,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/atividade03/ajuste_parametros.py">
+    <entry file="file://$PROJECT_DIR$/atividade04/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividade04/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="60">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividade04/models/AutoRegression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividade04/models/MovingAverage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividade04/models/KNeighborsRegressor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/atividade03/predicao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="740">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
           <folding>
             <element signature="e#87#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/AutoRegression_AES.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividade04/execution.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="120" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividade04/measures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividade04/predicao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="113" column="17" lean-forward="true" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
+          <folding>
+            <element signature="e#87#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividade04/ajuste_parametros.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" selection-end-column="75" />
+          <folding>
+            <element signature="e#88#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividade03/ajuste_parametros.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="102" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividade04/analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

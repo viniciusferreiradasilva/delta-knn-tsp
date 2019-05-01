@@ -79,8 +79,8 @@ for i in range(0, (len(series) - window_size), step_size):
     # Recupera uma fatia da série temporal de acordo com o tamanho da janela.
     train_series = series[i:(i + window_size)].values
     # Ajusta o modelo de acordo com a faixa da série.
-    # model = AR(train_series, algorithm_args).fit(disp=0)
-    model = arch_model(train_series).fit(update_freq=5)
+    model = AR(train_series, algorithm_args).fit(disp=0)
+    # model = arch_model(train_series).fit(update_freq=5)
     # Prediz os step_size passos na série temporal.
     prediction = model.predict(start=len(train_series), end=(len(train_series) + step_size - 1), dynamic=False)
     # Armazena o valor predito.

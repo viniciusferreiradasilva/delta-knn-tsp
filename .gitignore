@@ -1,0 +1,6 @@
+__pycache__
+*.pyc
+
+.idea
+data/output
+atividade04/analysis.py
