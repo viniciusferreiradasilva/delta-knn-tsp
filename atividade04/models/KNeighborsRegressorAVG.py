@@ -30,6 +30,10 @@ class KNeighborsRegressorAVG:
                             for chunk_index in k_nearest_chunks_indexes]
         
         w_avg = np.average(k_nearest_chunks, axis=0, weights=range(self.k, 0, -1))
+        
+        w = [x**2 for x in list(range(self.k, 0, -1))] 
+        
+        w_avg2 = np.average(k_nearest_chunks, axis=0, weights=w)
 
         #print(w_avg, np.mean(k_nearest_chunks, axis=0))
         
