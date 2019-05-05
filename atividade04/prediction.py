@@ -2,6 +2,7 @@
 from models.AutoRegression import AutoRegression
 from models.MovingAverage import MovingAverage
 from models.KNeighborsRegressor import KNeighborsRegressor
+from models.KNeighborsRegressorAVG import KNeighborsRegressorAVG
 import measures
 import math
 
@@ -37,7 +38,8 @@ parser.add_argument('--regressor', type=int, default=0,
                     help='um valor inteiro que representa qual regressor será utilizado na predição:\n'
                          '0 - Autoregressão\n'
                          '1 - Média Móvel\n'
-                         '2 - kNN.')
+                         '2 - kNN\n'
+                         '3 - kNN modificado.')
 # Regressor arguments args.
 parser.add_argument('--args', required=False, nargs='+', default=None,
                     help='Lista de parâmetros para o algoritmo de regressão. Cada algoritmo necessita de parâmetros'
@@ -67,7 +69,7 @@ series = df[from_index:to_index][field]
 y = [None] * (len(series) - window_size)
 # Predicted series values.
 predicted = [None] * (len(series) - window_size)
-regressor = [AutoRegression, MovingAverage, KNeighborsRegressor][args.regressor]
+regressor = [AutoRegression, MovingAverage, KNeighborsRegressor, KNeighborsRegressorAVG][args.regressor]
 # Retrieves the regression algorithm parameters.
 if args.args:
     algorithm_args = tuple(map(int, args.args))
@@ -100,6 +102,9 @@ print('mean_square_error:', measures.mse(y, predicted))
 print('TU:', measures.tu(y, predicted))
 print('pocid:', measures.pocid(y, predicted))
 errors = measures.absolute_errors(y, predicted)
+
+
+
 
 # # Plota o gráfico do erro quadratico para cada ponto.
 plt.subplot(2, 1, 2)
