@@ -9,6 +9,9 @@ class MovingAverage:
     def fit(self):
         pass
 
+    def preprocessing(self):
+        pass
+
     def predict(self, step_size):
         average = np.mean(self.train_series[-self.order:])
         return [average] * step_size

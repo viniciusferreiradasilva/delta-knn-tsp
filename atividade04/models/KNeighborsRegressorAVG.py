@@ -11,6 +11,9 @@ class KNeighborsRegressorAVG:
     def fit(self):
         pass
 
+    def preprocessing(self):
+        pass
+
     def distance(self, x, y):
         return euclidean_distances([x], [y])[0][0]
 
