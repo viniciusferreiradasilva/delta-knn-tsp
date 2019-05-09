@@ -39,7 +39,8 @@ parser.add_argument('--regressor', type=int, default=0,
                          '0 - Autoregressão\n'
                          '1 - Média Móvel\n'
                          '2 - kNN\n'
-                         '3 - kNN modificado.')
+                         '3 - kNN modificado.'
+                         '4 - kNN Sliding Window')
 # Regressor arguments args.
 parser.add_argument('--args', required=False, nargs='+', default=None,
                     help='Lista de parâmetros para o algoritmo de regressão. Cada algoritmo necessita de parâmetros'
@@ -97,16 +98,13 @@ plt.title("Predição de " + regressor.__name__ + " para " + args.stock_name)
 plt.xlabel("day")
 plt.ylabel("open")
 
-# Métricas de erro.
+# Error metrics.
 print('mean_square_error:', measures.mse(y, predicted))
 print('TU:', measures.tu(y, predicted))
 print('pocid:', measures.pocid(y, predicted))
 errors = measures.absolute_errors(y, predicted)
 
-
-
-
-# # Plota o gráfico do erro quadratico para cada ponto.
+# Plots the error graph.
 plt.subplot(2, 1, 2)
 plt.plot(range(len(errors)), errors, label='erro')
 plt.legend()
@@ -114,5 +112,5 @@ plt.title("Erros de " + regressor.__name__ + " para " + args.stock_name + " (err
 plt.xlabel("day")
 plt.ylabel("erro")
 plt.subplots_adjust(hspace=.5)
-# plt.show()
-plt.savefig('output/' + regressor.__name__ + '_' + args.stock_name+'.eps', format='eps')
+plt.show()
+# plt.savefig('output/' + regressor.__name__ + '_' + args.stock_name+'.eps', format='eps')
