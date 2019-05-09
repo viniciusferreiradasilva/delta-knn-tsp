@@ -3,7 +3,7 @@ from sklearn.metrics.pairwise import euclidean_distances
 import numpy as np
 
 
-class KNeighborsRegressor:
+class KNeighborsDifferenceRegressor:
     def __init__(self, train_series, k=3):
         self.train_series = train_series
         self.k = k
@@ -17,16 +17,31 @@ class KNeighborsRegressor:
     def distance(self, x, y):
         return euclidean_distances([x], [y])[0][0]
 
+    # Difference of the time series. difference(t) = observation(t) - observation(t-1)
+    def difference_series(self):
+        return [self.train_series[i + 1] - self.train_series[i] for i in range(len(self.train_series) - 1)]
+
     def predict(self, step_size):
-        to_predict = self.train_series[-step_size:]
-        window = self.train_series[:-step_size]
+        # Calculates the difference series.
+        difference = self.difference_series()
+        to_predict = difference[-step_size:]
+        window = difference[:-step_size]
         # Due to the division, some chunks can have a length different from step_size.
         chunks = [window[i:(i + step_size)] for i in range(len(window)) if len(window) >= (i + step_size)]
         # Filtering the chunks with length different from step_size
-        distances = np.array(list(map(lambda x: mean_squared_error(x, to_predict), chunks)))
+        distances = np.array(list(map(lambda x: euclidean_distances([x], [to_predict])[0][0], chunks)))
         k_nearest_chunks_indexes = np.argpartition(distances, range(min(len(chunks), self.k)))[:min(len(chunks), self.k)]
         k_nearest_chunks = [chunks[chunk_index] for chunk_index in k_nearest_chunks_indexes]
-        return np.mean(k_nearest_chunks, axis=0)
+
+        mean_of_differences = np.mean(k_nearest_chunks, axis=0)
+        inverted = np.array(self.train_series[-step_size:])
+
+        # print('mean_of_differences:', mean_of_differences)
+        # print('inverted:', inverted)
+        # print('sum:', inverted + mean_of_differences)
+        # print('-' * 50)
+
+        return inverted + mean_of_differences
 
 
 

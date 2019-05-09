@@ -3,6 +3,7 @@ from models.AutoRegression import AutoRegression
 from models.MovingAverage import MovingAverage
 from models.KNeighborsRegressor import KNeighborsRegressor
 from models.KNeighborsRegressorAVG import KNeighborsRegressorAVG
+from models.KNeighborsDifferenceRegressor import KNeighborsDifferenceRegressor
 import measures
 import math
 
@@ -42,7 +43,7 @@ parser.add_argument('--regressor', type=int, default=0,
                          '3 - kNN modificado.'
                          '4 - kNN Sliding Window')
 # Regressor arguments args.
-parser.add_argument('--args', required=False, nargs='+', default=None,
+parser.add_argument('--args', required=False, nargs='+', default=[],
                     help='Lista de parâmetros para o algoritmo de regressão. Cada algoritmo necessita de parâmetros'
                          'diferentes para a sua execução: --args arg_1 arg_2 ... arg_n')
 
@@ -66,22 +67,23 @@ window_size = args.window
 step_size = args.steps
 # Retrieves the time series of the field.
 series = df[from_index:to_index][field]
+# Resets the index of the series.
+series = series.reset_index(drop=True)
+
 # Series values.
 y = [None] * (len(series) - window_size)
 # Predicted series values.
 predicted = [None] * (len(series) - window_size)
-regressor = [AutoRegression, MovingAverage, KNeighborsRegressor, KNeighborsRegressorAVG][args.regressor]
-# Retrieves the regression algorithm parameters.
-if args.args:
-    algorithm_args = tuple(map(int, args.args))
-else:
-    algorithm_args = None
+regressor = [AutoRegression, MovingAverage, KNeighborsRegressor, KNeighborsRegressorAVG,
+             KNeighborsDifferenceRegressor][args.regressor]
+# Converts the parameters to number.
+args.args = list(map(int, args.args))
 
 for i in range(0, (len(series) - window_size), step_size):
     # Retrieves the slice of the series according to the window.
     train_series = series[i:(i + window_size)].values
     # Creates the model.
-    model = regressor(train_series)
+    model = regressor(train_series, *args.args)
     model.fit()
     # Predict the step_size horizon in the series.
     prediction = model.predict(step_size)
@@ -89,6 +91,7 @@ for i in range(0, (len(series) - window_size), step_size):
 
 y = series[window_size:].values
 predicted = predicted[:len(y)]
+
 
 plt.subplot(2, 1, 1)
 plt.plot(range(len(predicted)), predicted, label='predito')

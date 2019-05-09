@@ -8,6 +8,8 @@ import measures
 from models.AutoRegression import AutoRegression
 from models.MovingAverage import MovingAverage
 from models.KNeighborsRegressor import KNeighborsRegressor
+from models.KNeighborsRegressorAVG import KNeighborsRegressorAVG
+from models.KNeighborsDifferenceRegressor import KNeighborsDifferenceRegressor
 
 # Instancia o parser.
 parser = argparse.ArgumentParser(description='Ferramenta de ajuste do tamanho da janela de regressão.', formatter_class=argparse.RawTextHelpFormatter)
@@ -38,8 +40,16 @@ parser.add_argument('--to_window', type=int, default=20,
                     help='um valor inteiro que representa o tamanho da janela que será utilizada para o treinamento'
                          'na predição.')
 
+# From window arg.
+parser.add_argument('--from_parameter', type=int, default=3,
+                    help='um valor inteiro que representa de onde começa parâmetro para o algoritmo de predição.')
+
+# To window arg.
+parser.add_argument('--to_parameter', type=int, default=3,
+                    help='um valor inteiro que representa até onde vai o parâmetro para o algoritmo de predição.')
+
 # Prediction horizon steps.
-parser.add_argument('--steps', required=False, nargs='+', default=[1, 5, 10],
+parser.add_argument('--steps', required=False, nargs='+', default=[1, 3, 5],
                     help='Lista dos steps ao qual se deseja testar. --steps step1 step2 step3 ...')
 
 # Regressor choice argument.
@@ -70,26 +80,30 @@ else:
 field = args.field
 # Retrieves the time series of the field.
 series = df[from_index:to_index][field]
-regressor = [AutoRegression, MovingAverage, KNeighborsRegressor][args.regressor]
+regressor = [AutoRegression, MovingAverage, KNeighborsRegressor, KNeighborsRegressorAVG,
+             KNeighborsDifferenceRegressor][args.regressor]
 output_file = 'output/' + regressor.__name__ + '_' + args.stock_name+'.csv'
 f = open(output_file, 'w')
 print("Executando ", regressor.__name__, "em", args.stock_name)
-f.write('step,window,mse,tu,pocid\n')
+f.write('step,window,parameter,mse,tu,pocid\n')
 for step in list(map(int, args.steps)):
-    tus = np.empty(args.to_window - args.from_window)
-    for index, window_size in enumerate(range(args.from_window, args.to_window)):
-        y = [None] * (len(series) - window_size)
-        predicted = [None] * (len(series) - window_size)
-        for i in range(0, (len(series) - window_size), step):
-            train_series = series[i:(i + window_size)].values
-            # Creates the model.
-            model = regressor(train_series)
-            model.fit()
-            # Predict the step_size horizon in the series.
-            prediction = model.predict(step)
-            predicted[i:(i + step)] = prediction
-        y = series[window_size:]
-        predicted = predicted[:len(y)]
-        f.write(str(step) + ',' + str(window_size) + ',' + str(measures.mse(y.values, predicted)) + ','
-                + str(measures.tu(y.values, predicted)) + ',' + str(measures.pocid(y.values, predicted)) + '\n')
+    for parameter in range(args.from_parameter, args.to_parameter + 1):
+        tus = np.empty(args.to_window - args.from_window)
+        for index, window_size in enumerate(range(args.from_window, args.to_window)):
+            if window_size - step > step:
+                y = [None] * (len(series) - window_size)
+                predicted = [None] * (len(series) - window_size)
+                for i in range(0, (len(series) - window_size), step):
+                    train_series = series[i:(i + window_size)].values
+                    # Creates the model.
+                    model = regressor(train_series, *[parameter])
+                    model.fit()
+                    # Predict the step_size horizon in the series.
+                    prediction = model.predict(step)
+                    predicted[i:(i + step)] = prediction
+                y = series[window_size:]
+                predicted = predicted[:len(y)]
+                f.write(str(step) + ',' + str(window_size) + ',' + str(parameter) + ',' +
+                        str(measures.mse(y.values, predicted)) + ',' + str(measures.tu(y.values, predicted)) + ',' +
+                        str(measures.pocid(y.values, predicted)) + '\n')
 f.close()
