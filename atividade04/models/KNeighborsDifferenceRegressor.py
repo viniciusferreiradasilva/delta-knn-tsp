@@ -35,13 +35,12 @@ class KNeighborsDifferenceRegressor:
 
         mean_of_differences = np.mean(k_nearest_chunks, axis=0)
         inverted = np.array(self.train_series[-step_size:])
-
-        # print('mean_of_differences:', mean_of_differences)
-        # print('inverted:', inverted)
-        # print('sum:', inverted + mean_of_differences)
-        # print('-' * 50)
-
-        return inverted + mean_of_differences
+        predicted = [None] * step_size
+        last_value = self.train_series[-1]
+        for index, value in enumerate(mean_of_differences):
+            predicted[index] = last_value + value
+            last_value = predicted[index]
+        return predicted
 
 
 

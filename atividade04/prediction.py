@@ -115,5 +115,5 @@ plt.title("Erros de " + regressor.__name__ + " para " + args.stock_name + " (err
 plt.xlabel("day")
 plt.ylabel("erro")
 plt.subplots_adjust(hspace=.5)
-plt.show()
-# plt.savefig('output/' + regressor.__name__ + '_' + args.stock_name+'.eps', format='eps')
+# plt.show()
+plt.savefig('output/' + regressor.__name__ + '_' + args.stock_name+'.eps', format='eps')
