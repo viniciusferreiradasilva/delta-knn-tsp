@@ -2,9 +2,10 @@ from statsmodels.tsa.ar_model import AR
 
 
 class AutoRegression:
-    def __init__(self, train_series):
+    def __init__(self, train_series, p):
         self.train_series = train_series
         self.ar = AR(train_series)
+        self.p = p
 
     def fit(self):
         self.ar = self.ar.fit(disp=0)
